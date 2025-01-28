@@ -76,11 +76,12 @@ export const update = async (req,res)=>{
   }
 }
 
-export const checkAuthUser = async  (req,res) => {
-  try{
-    res.status(200).json(req.user)
-  }catch(error){
-    res.status(500).json({error:"Internal Server Error"})
-    console.log("Error in checkAuthUser function",error)
+export const checkAuthUser = async (req, res) => {
+  try {
+
+    return res.status(200).json(req.user);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+    console.log("Error in checkAuthUser function", error);
   }
-}
+};
